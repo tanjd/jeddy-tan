@@ -18,9 +18,15 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src"
   },
+  "lint-staged": {
+    "src /**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
   },
   "browserslist": {
@@ -38,7 +44,7 @@
   "devDependencies": {
     "eslint": "^8.28.0",
     "eslint-plugin-react": "^7.31.11",
-    "husky": "^8.0.2",
+    "husky": "^4.3.8",
     "lint-staged": "^13.0.4"
   }
 }
